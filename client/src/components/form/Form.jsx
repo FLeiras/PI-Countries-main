@@ -79,6 +79,10 @@ const Form = () => {
         title: "Actividad creada correctamente",
         icon: "success",
         confirmButtonText: "Aceptar",
+      }).then((resultado) => {
+        if (resultado.value) {
+          window.location.reload();
+        }
       });
       setInput({
         name: "",
