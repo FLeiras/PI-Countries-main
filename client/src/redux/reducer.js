@@ -8,7 +8,6 @@ import {
   SEARCH_COUNTRIES,
   FILTER_BY_ACTIVITY,
   DELETE_ACTIVITY,
-  UPDATE_ACTIVITY,
 } from "./actions";
 import {
   countryByContinent,
@@ -24,6 +23,8 @@ const initialState = {
   activity: [],
   countryDetails: [],
   sortCountries: [],
+  filterCountryName: [],
+  filterCountryPopu: [],
 };
 
 function rootReducer(state = initialState, action) {
@@ -47,14 +48,14 @@ function rootReducer(state = initialState, action) {
     case SORT_COUNTRIES_BY_NAME:
       return {
         ...state,
-        sortCountries: sortCountriesByName(action.payload, state.copyCountries),
+        filterCountryName: sortCountriesByName(action.payload, state.countries),
       };
     case SORT_COUNTRIES_BY_POPULATION:
       return {
         ...state,
-        sortCountries: sortCountriesByPopulation(
+        filterCountryPopu: sortCountriesByPopulation(
           action.payload,
-          state.copyCountries
+          state.countries
         ),
       };
     case FILTER_BY_CONTINENT:
@@ -65,7 +66,7 @@ function rootReducer(state = initialState, action) {
     case FILTER_BY_ACTIVITY:
       return {
         ...state,
-        countries: filterByActivity(action.payload, state.copyCountries),
+        copyCountries: filterByActivity(action.payload, state.countries),
       };
     case SEARCH_COUNTRIES:
       return {
@@ -73,10 +74,6 @@ function rootReducer(state = initialState, action) {
         countries: searchCountry(action.payload, state.copyCountries),
       };
     case DELETE_ACTIVITY:
-      return {
-        ...state,
-      };
-    case UPDATE_ACTIVITY:
       return {
         ...state,
       };
