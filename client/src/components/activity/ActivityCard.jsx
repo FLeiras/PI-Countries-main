@@ -1,13 +1,21 @@
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { deleteActivity } from "../../redux/actions";
+import Swal from "sweetalert2";
 import "./ActivityCard.css";
 
 const ActivityCard = ({ id, name, difficult, duration, season, countryId }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleDelete = () => {
     dispatch(deleteActivity(id, countryId));
-    window.location.reload();
+    navigate("/home");
+    Swal.fire({
+      title: "Actividad eliminada correctamente",
+      icon: "success",
+      confirmButtonText: "Aceptar",
+    });
   };
 
   return (
