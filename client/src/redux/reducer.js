@@ -66,7 +66,7 @@ function rootReducer(state = initialState, action) {
     case FILTER_BY_ACTIVITY:
       return {
         ...state,
-        copyCountries: filterByActivity(action.payload, state.countries),
+        countries: filterByActivity(action.payload, state.copyCountries),
       };
     case SEARCH_COUNTRIES:
       return {
