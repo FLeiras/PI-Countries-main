@@ -1,11 +1,11 @@
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/landingPage/LandingPage";
 import Home from "./components/home/Home";
 import Form from "./components/form/Form";
 import About from "./components/about/About";
 import CountryDetail from "./components/countryDetail/CountryDetail";
-import NotFound from "./components/notFound/NotFound";
+import PageNotFound from "./components/404/PageNotFound";
+import "./App.css";
 
 function App() {
   return (
@@ -14,9 +14,9 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/post" element={<Form />} />
-        <Route exact path="/:id" element={<CountryDetail />} />
+        <Route path="/home/:id" element={<CountryDetail />} />
         <Route exact path="/about" element={<About />} />
-        <Route path="*" element={<NotFound />} />
+        <Route exact path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );

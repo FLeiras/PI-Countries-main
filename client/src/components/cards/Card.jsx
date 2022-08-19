@@ -13,7 +13,7 @@ function Card({ img, name, continent, population, id, subregion }) {
         <h3>{subregion}</h3>
         <h3>{population}</h3>
         <div className="detail-link">
-          <Link to={`/${id}`} className="btnDetail">
+          <Link to={`/home/${id}`} className="btnDetail">
             -Mas-
           </Link>
         </div>
