@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { deleteActivity } from "../../redux/actions";
+import { AiOutlineDelete } from "react-icons/ai";
 import Swal from "sweetalert2";
 import "./ActivityCard.css";
 
@@ -38,9 +39,8 @@ const ActivityCard = ({ id, name, difficult, duration, season, countryId }) => {
           {season}
         </p>
       </div>
-
       <div className="btnDel">
-        <button onClick={handleDelete}>Delete</button>
+        <AiOutlineDelete onClick={handleDelete} />
       </div>
     </div>
   );

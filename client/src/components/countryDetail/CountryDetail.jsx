@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import {
-  clearState,
-  getCountryById /* , clearState */,
-} from "../../redux/actions";
+import { clearState, getCountryById } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import giphy from "../props/giphy.gif";
 import ActivityCard from "../activity/ActivityCard";

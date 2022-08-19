@@ -74,12 +74,20 @@ export function postActivity(payload) {
 
 export function deleteActivity(id, countryId) {
   return async function (dispatch) {
-    console.log(countryId);
     await axios.put(`http://localhost:3001/activity/delete/${id}`, {
       countryId: countryId,
     });
     return dispatch({
       type: "DELETE_ACTIVITY",
+    });
+  };
+}
+
+export function updateActivity(id, data) {
+  return async function (dispatch) {
+    await axios.put(`http://localhost:3001/activity/${id}`, data);
+    return dispatch({
+      type: "UPDATE_ACTIVITY",
     });
   };
 }
@@ -100,4 +108,5 @@ export const FILTER_BY_CONTINENT = "FILTER_BY_CONTINENT";
 export const SEARCH_COUNTRIES = "SEARCH_COUNTRIES";
 export const FILTER_BY_ACTIVITY = "FILTER_BY_ACTIVITY";
 export const DELETE_ACTIVITY = "DELETE_ACTIVITY";
+export const UPDATE_ACTIVITY = "UPDATE_ACTIVITY";
 export const CLEAR_STATE = "CLEAR_STATE";

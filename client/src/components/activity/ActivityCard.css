@@ -15,15 +15,10 @@
 .btnDel {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-}
-
-.btnDel button {
-  width: 100px;
-  height: 30px;
-  border-radius: 20px;
-  border: 2px solid var(--color-pri);
-  background: var(--color-pri-ligth);
+  justify-content: center;
+  align-items: center;
+  margin-left: 130px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

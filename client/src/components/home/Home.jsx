@@ -15,8 +15,8 @@ import Footer from "../footer/Footer";
 import giphy from "../props/giphy.gif";
 import { AiOutlineUndo } from "react-icons/ai";
 import SearchBar from "../searchBar/SearchBar";
-import "./Home.css";
 import NotFound from "../notFound/NotFound";
+import "./Home.css";
 
 function Home() {
   const [, setRefreshState] = useState(false);
@@ -112,7 +112,7 @@ function Home() {
             }}
             className="filterContinent"
           >
-            <option value="All">Elegi Continente</option>
+            <option value="All">Elegi el Continente</option>
             <option value="Africa">Africa</option>
             <option value="Americas">America</option>
             <option value="Antarctic">Antartica</option>

@@ -77,16 +77,13 @@ router.put("/delete/:id", async (req, res) => {
   }
 });
 
-/* router.put("/:id", async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, difficult, duration, season, countries } = req.body;
+    const { name, difficult, duration, season } = req.body;
     let updateActivity = await Activity.findOne({
       where: {
         id: id,
-      },
-      include: {
-        model: Country,
       },
     });
     await updateActivity.update({
@@ -94,23 +91,11 @@ router.put("/delete/:id", async (req, res) => {
       difficult: difficult,
       duration: duration,
       season: season,
-      countries: countries,
     });
-    let actDb = await Activity.findAll({
-      where: {
-        id: {
-          [Op.in]: id,
-        },
-      },
-      include: {
-        model: Country,
-      },
-    });
-    await updateActivity.setActivitys(actDb);
     res.send(updateActivity);
   } catch (error) {
     res.status(400).send(error);
   }
-}); */
+});
 
 module.exports = router;
