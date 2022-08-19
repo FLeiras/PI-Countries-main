@@ -8,6 +8,7 @@ import {
   SEARCH_COUNTRIES,
   FILTER_BY_ACTIVITY,
   DELETE_ACTIVITY,
+  CLEAR_STATE,
 } from "./actions";
 import {
   countryByContinent,
@@ -74,6 +75,10 @@ function rootReducer(state = initialState, action) {
         countries: searchCountry(action.payload, state.copyCountries),
       };
     case DELETE_ACTIVITY:
+      return {
+        ...state,
+      };
+    case CLEAR_STATE:
       return {
         ...state,
       };
